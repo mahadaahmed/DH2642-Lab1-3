@@ -1,13 +1,67 @@
+# npm-tutorial
+tutorial version 5
 
-# DH2643 - Interaction Programming and the Dynamic Web
+1. install node, recent version (e.g. 17)
 
-Interaction programming gives the basic Model-View-Controller principles for developing interactive applications. These principles can be applied to many desktop, mobile or web apps frameworks. The course currently applies these principles to web applications, using JavaScript, DOM APIs, HTML, CSS etc. These front-end applications use data from remote back-ends using web APIs.
+2. after checkout execute
+```
+npm install
+```
+3. to start your development server
+```
+npm run dev
+```
 
-* JavaScript for interaction programming: callbacks, synchronous and asynchronous code, functional programming.
-* Web development interfaces (API): REST, JSON, AJAX, Fetch, Promises.
-* Local data: cookies, local storage.
-* User interfaces, appearance: HTML, CSS, DOM API, other tree based frameworks for user interfaces.
-* User interfaces, interaction: events, event levels, event propagation, event management.
-* User interfaces, frameworks: React, Vue.
-* User interfaces, architectures: Model-View-Presenter.
-* Runtime: Node.js, vite
+In case of problems with npm, see (6) Docker below
+
+4. Point your browser to HTML addresses corresponding to different steps of the tutorial, such as:
+
+http://localhost:8080/tw1.1.html
+
+http://localhost:8080/tw1.1-react.html
+
+http://localhost:8080/tw1.2.html
+
+http://localhost:8080/tw1.2-react.html
+
+http://localhost:8080/tw1.2.1.html
+
+The tutorial will point you to other such URLs. Each file under `tw/tw*.js` has a HTML counterpart
+
+5. Unit tests should be run after each tutorial step. We recommend to load unit tests in an Incognito browser window.
+http://localhost:8080/test.html
+
+6. Make sure that your function names and parameter names follow the **obligatory** [lab coding conventions](https://docs.google.com/presentation/d/1CtxiAG9mJ6kslSl6psBBlVDafFD4b2Rh2G7ft1GQ08o/edit#slide=id.g17644a78da5_0_174)
+
+## Installation problems?
+File [an issue](https://gits-15.sys.kth.se/iprog/issues).
+In case you have problems with node, npm, webpack, you can use Docker to make a clean little "machine"
+
+https://docs.docker.com/get-docker/
+
+To build your Docker image (see the file `Dockerfile`), run once:
+```
+docker build . -t dh2642
+```
+
+Also it is a good idea to remove the `node_modules` directory before starting the server for the first time.
+
+Then every time you want to run the development server:
+
+```
+docker-compose up
+```
+(see the file `docker-compose.yml`) 
+
+## Test result tracking 
+Your test results are saved in a secured KTH database. We use this for three main purposes:
+
+1) to identify students who struggle in the early stages of the course
+2) to identify concepts that many students struggle with.
+3) to conduct learning analytics research. For such purposes, all data is stored anonymoyusly.
+
+To configure, locate the file "telemetry.config.json" in the root directory
+- Track my test results: "full"  (default). In this case we will be albe to contact you if we notice that you get stuck.
+- Track my test results without username: "anonymous". This still helps us see if many students get stuck at the same lab task.
+- Don't track my test results: "none"  
+
